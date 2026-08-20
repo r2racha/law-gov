@@ -10,6 +10,8 @@ import { BookOpen, ChevronRight, CircleHelp, Clock3, FileText, Lightbulb, Menu, 
 import { Fragment, useMemo, useState } from "react";
 import { Link } from "wouter";
 import { lawArticles, overviewSteps, quizQuestions } from "@/data/law";
+import { WholeLawStory } from "@/components/WholeLawStory";
+import { adminProcedureWholeStory } from "@/data/whole-stories";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
 const rachaApproveUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ueeHTHMpEJbnxxFV.png";
@@ -81,6 +83,7 @@ export default function Home() {
   const navItems = [
     ["ภาพรวม", "overview"],
     ["อ่านรายมาตรา", "articles"],
+    ["เล่าทั้งฉบับ", "whole-story"],
     ["ข้อสอบทบทวน", "quiz"],
   ] as const;
 
@@ -110,6 +113,7 @@ export default function Home() {
       <div className="law-tabs"><div className="mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 lg:px-10"><Link href="/"><span className="law-tab-active">วิธีปฏิบัติราชการทางปกครอง</span></Link><Link href="/good-governance"><span>บริหารกิจการบ้านเมืองที่ดี</span></Link></div></div>
 
       <main id="top">
+        <WholeLawStory story={adminProcedureWholeStory} beforeId="quiz" />
         <section className="relative isolate overflow-hidden bg-[#E9F5F1] pb-14 pt-10 lg:pb-20 lg:pt-16">
           <div className="absolute -left-20 top-12 h-52 w-52 rounded-full bg-[#F9D7B5]/50 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[#BDE0D9]/60 blur-3xl" />
@@ -161,7 +165,7 @@ export default function Home() {
           <div className="mx-auto max-w-[1280px]">
             <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"><div><p className="section-kicker">ห้องอ่านรายมาตรา</p><h2 className="mt-3 text-4xl font-semibold leading-tight text-[#174945]">เลือกอ่านแบบที่<br />ไม่หลงในคำยาก</h2></div><div className="max-w-md rounded-2xl border border-[#0E8F8A]/15 bg-white p-4 text-sm leading-6 text-[#5B6662]"><Lightbulb className="mb-1 inline h-4 w-4 text-[#E17A38]" /> เริ่มจากกล่อง “เล่าง่ายๆสไลต์พี่ราช” แล้วเปิดตัวบทมาตราจริงเมื่ออยากตรวจถ้อยคำ</div></div>
             <div className="mt-10 grid gap-5 lg:grid-cols-[230px_1fr]">
-              <aside className="lg:sticky lg:top-24 lg:h-fit"><div className="border border-[#0E8F8A]/15 bg-[#FFFDF8] p-4 shadow-sm"><p className="mb-3 text-sm font-semibold text-[#0E625E]">เลือกหมวด</p><div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible">{["ทั้งหมด", ...sections].map((section) => <button key={section} onClick={() => setActiveSection(section)} className={`whitespace-nowrap border-l-4 px-3 py-2 text-left text-sm font-medium transition ${activeSection === section ? "border-[#0E8F8A] bg-[#E2F1ED] text-[#0C716B]" : "border-transparent text-[#666158] hover:bg-[#F6F0E8]"}`}>{section}</button>)}</div></div><div className="mt-5 border-l-4 border-[#F2AA72] bg-[#FFF3E7] p-4 text-sm leading-6 text-[#785430]"><strong className="block text-[#AD672D]">วิธีเดินบทเรียน</strong>เลือกหมวด → เปิดคำอธิบาย → ค่อยตรวจตัวบทจริง</div></aside>
+              <aside className="lg:sticky lg:top-24 lg:h-fit"><div className="border border-[#0E8F8A]/15 bg-[#FFFDF8] p-4 shadow-sm"><p className="mb-3 text-sm font-semibold text-[#0E625E]">เลือกหมวด</p><div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible">{["ทั้งหมด", ...sections].map((section) => <button key={section} onClick={() => setActiveSection(section)} className={`whitespace-nowrap border-l-4 px-3 py-2 text-left text-sm font-medium transition ${activeSection === section ? "border-[#0E8F8A] bg-[#E2F1ED] text-[#0C716B]" : "border-transparent text-[#666158] hover:bg-[#F6F0E8]"}`}>{section === "ทั้งหมด" ? section : `${section} · ${chapterMeta[section]?.title ?? "รายละเอียดหมวด"}`}</button>)}</div></div><div className="mt-5 border-l-4 border-[#F2AA72] bg-[#FFF3E7] p-4 text-sm leading-6 text-[#785430]"><strong className="block text-[#AD672D]">วิธีเดินบทเรียน</strong>เลือกหมวด → เปิดคำอธิบาย → ค่อยตรวจตัวบทจริง</div></aside>
               <div>
                 <label className="flex items-center gap-3 border border-[#0E8F8A]/15 bg-white px-4 py-3 shadow-sm focus-within:ring-2 focus-within:ring-[#0E8F8A]/30"><Search size={19} className="text-[#0E8F8A]" /><input value={query} onChange={(event) => setQuery(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#A39F95]" placeholder="ค้นหามาตรา คำสำคัญ หรือคำอธิบาย…" /></label>
                 <p className="mt-4 text-sm text-[#66736F]">พบ <strong className="text-[#0E766F]">{filteredArticles.length}</strong> มาตรา</p>
