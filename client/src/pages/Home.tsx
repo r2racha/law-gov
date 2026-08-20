@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { BookOpen, ChevronRight, CircleHelp, Clock3, FileText, Lightbulb, Menu, Scale, Search, Sparkles, X } from "lucide-react";
 import { Fragment, useMemo, useState } from "react";
+import { Link } from "wouter";
 import { lawArticles, overviewSteps, quizQuestions } from "@/data/law";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
@@ -106,6 +107,7 @@ export default function Home() {
           <div className="flex flex-col gap-2">{navItems.map(([label, id]) => <button key={id} onClick={() => { scrollTo(id); setMobileMenuOpen(false); }} className="rounded-xl px-4 py-3 text-left font-medium hover:bg-[#E7F2EF]">{label}</button>)}</div>
         </div>}
       </header>
+      <div className="law-tabs"><div className="mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 lg:px-10"><Link href="/"><span className="law-tab-active">วิธีปฏิบัติราชการทางปกครอง</span></Link><Link href="/good-governance"><span>บริหารกิจการบ้านเมืองที่ดี</span></Link></div></div>
 
       <main id="top">
         <section className="relative isolate overflow-hidden bg-[#E9F5F1] pb-14 pt-10 lg:pb-20 lg:pt-16">

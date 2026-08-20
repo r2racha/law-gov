@@ -1,0 +1,25 @@
+{
+  "legal_identity": {
+    "type": "พระราชกฤษฎีกา",
+    "title": "พระราชกฤษฎีกาว่าด้วยหลักเกณฑ์และวิธีการบริหารกิจการบ้านเมืองที่ดี พ.ศ. 2546",
+    "scope": "ข้อความฉบับรวมสำหรับบทเรียนเว็บไซต์"
+  },
+  "base_source": {
+    "title": "ข้อความฉบับรวมที่เผยแพร่โดยศูนย์ข้อมูลข่าวสารของราชการ",
+    "url": "https://infocenter.oic.go.th/FILEWEB/CABINFOCENTER9/DRAWER041/GENERAL/DATA0010/00010285.PDF",
+    "acquired_file": "infocenter.oic.go.th_FILEWEB_CABINFOCENTER9_DRAWER041_GENERAL_DATA0010_00010285.PDF_1787227892935.md"
+  },
+  "amendments": [
+    {
+      "title": "พระราชกฤษฎีกาว่าด้วยหลักเกณฑ์และวิธีการบริหารกิจการบ้านเมืองที่ดี (ฉบับที่ 2) พ.ศ. 2562",
+      "promulgated": "30 เมษายน 2562",
+      "effective": "1 พฤษภาคม 2562",
+      "source_url": "https://legal.ops.moc.go.th/th/content/category/detail/id/511/iid/3948"
+    }
+  ],
+  "consolidation_status": "consolidated",
+  "effective_as_of": "1 พฤษภาคม 2562 (ไม่พบฉบับแก้ไขเพิ่มเติมภายหลังจากการตรวจค้นแหล่งข้อมูลที่เข้าถึงได้)",
+  "verified_on": "20 สิงหาคม 2569",
+  "verified_by": "Manus AI",
+  "notes": "ใช้ฉบับรวมที่มีเชิงอรรถระบุการยกเลิก เพิ่มเติม และแทนที่ข้อความโดยฉบับที่ 2 พ.ศ. 2562; เนื้อหาหน้าเว็บจะแสดงวันที่สถานะกฎหมายอย่างชัดเจน"
+}
