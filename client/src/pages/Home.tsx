@@ -11,6 +11,7 @@ import { Fragment, useMemo, useState } from "react";
 import { Link } from "wouter";
 import { lawArticles, overviewSteps, quizQuestions } from "@/data/law";
 import { WholeLawStory } from "@/components/WholeLawStory";
+import { LawCompletion } from "@/components/LawCompletion";
 import { adminProcedureWholeStory } from "@/data/whole-stories";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
@@ -114,6 +115,7 @@ export default function Home() {
 
       <main id="top">
         <WholeLawStory story={adminProcedureWholeStory} beforeId="quiz" />
+        <LawCompletion beforeId="quiz" afterStoryId={adminProcedureWholeStory.id} articleNoun="มาตรา" />
         <section className="relative isolate overflow-hidden bg-[#E9F5F1] pb-14 pt-10 lg:pb-20 lg:pt-16">
           <div className="absolute -left-20 top-12 h-52 w-52 rounded-full bg-[#F9D7B5]/50 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[#BDE0D9]/60 blur-3xl" />

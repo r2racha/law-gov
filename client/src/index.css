@@ -109,3 +109,7 @@
 
 @media (max-width: 640px) { .chapter-spread { min-height: 230px; padding: 1.5rem 6rem 1.5rem 1.25rem; }.chapter-mascot { right: -.9rem; height: 145px; }.chapter-count { right: 5.4rem; top: 1rem; height: 64px; width: 64px; font-size: 1.7rem; }.chapter-count small { margin-top: .3rem; font-size: .55rem; }.article-route::before { left: 32px; }.article-ribbon { width: 64px; min-height: 61px; flex-basis: 64px; }.article-ribbon b { font-size: 1.2rem; }.article-interlude { padding-left: 1.2rem; }.article-interlude img { height: 72px; }.lesson-card [data-slot="accordion-trigger"] { gap: .9rem; padding-left: 1rem; padding-right: 1rem; } }
 @media (max-width: 640px) { .generic-chapter-spread { min-height: 230px; padding: 1.5rem 6rem 1.5rem 1.25rem; }.generic-interlude { padding-left: 1.2rem; }.generic-interlude img { height: 72px; }.generic-hero h1 { font-size: 46px; } }
+
+/* Shared responsive safety: chapter filters must wrap within the phone viewport, never widen the reading canvas. */
+#articles aside.mt-14 { display: none; }
+@media (max-width: 1023px) { #articles aside .flex.gap-2.overflow-x-auto { flex-wrap: wrap; overflow: visible; } #articles aside .flex.gap-2.overflow-x-auto > button { min-width: 0; max-width: 100%; flex: 1 1 11rem; overflow-wrap: anywhere; white-space: normal; } #articles .chapter-spread, #articles .generic-chapter-spread { max-width: 100%; } #articles .chapter-spread h3, #articles .generic-chapter-spread h3 { overflow-wrap: anywhere; } }
