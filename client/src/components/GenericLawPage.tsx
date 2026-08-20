@@ -10,7 +10,7 @@ import { LawCompletion } from "@/components/LawCompletion";
 import { WholeLawStory } from "@/components/WholeLawStory";
 import type { WholeLawStory as WholeLawStoryData } from "@/data/whole-stories";
 import type { LawArticle, QuizQuestion } from "@/data/law";
-import { BookOpen, ChevronRight, CircleHelp, FileText, Lightbulb, Menu, Scale, Search, ShieldCheck, Sparkles, X } from "lucide-react";
+import { Archive, BookOpen, ChevronRight, CircleHelp, FileText, KeyRound, Lightbulb, LockKeyhole, Menu, Scale, Search, ShieldCheck, Sparkles, X } from "lucide-react";
 import { Fragment, useMemo, useState, type CSSProperties } from "react";
 import { Link } from "wouter";
 
@@ -20,7 +20,7 @@ const rachaGuideUrl = "https://files.manuscdn.com/user_upload_by_module/session_
 
 export type ChapterMeta = { title: string; scene: string; narrator: string; tone: string; lessonPrompt: string };
 export type GenericLawConfig = {
-  slug: "liability" | "official-information";
+  slug: "liability" | "official-information" | "secrecy";
   tabLabel: string;
   headerLabel: string;
   legalTitle: string;
@@ -39,10 +39,10 @@ export type GenericLawConfig = {
   primaryDark: string;
   soft: string;
   hero: string;
-  scene: "liability" | "information";
+  scene: "liability" | "information" | "secrecy";
 };
 
-const tabs = [["/", "วิธีปฏิบัติราชการทางปกครอง"], ["/good-governance", "บริหารกิจการบ้านเมืองที่ดี"], ["/liability", "ความรับผิดทางละเมิด"], ["/official-information", "ข้อมูลข่าวสารของราชการ"]] as const;
+const tabs = [["/", "วิธีปฏิบัติราชการทางปกครอง"], ["/good-governance", "บริหารกิจการบ้านเมืองที่ดี"], ["/liability", "ความรับผิดทางละเมิด"], ["/official-information", "ข้อมูลข่าวสารของราชการ"], ["/secrecy", "การรักษาความลับของทางราชการ"]] as const;
 const fallbackMeta: ChapterMeta = { title: "อ่านกติกาในส่วนนี้ให้เห็นความเชื่อมโยง", scene: "บทเรียน", narrator: "อ่านคำแปลควบคู่ตัวบทจริง เพื่อจับผู้เกี่ยวข้อง เงื่อนไข และผลตามกฎหมายให้ครบ", tone: "chapter-stone", lessonPrompt: "หยุดทวนว่าแต่ละมาตราในส่วนนี้เชื่อมกันเป็นลำดับอย่างไร ก่อนอ่านต่อ" };
 
 export function GenericLawPage({ config }: { config: GenericLawConfig }) {
@@ -63,6 +63,7 @@ export function GenericLawPage({ config }: { config: GenericLawConfig }) {
   const navItems = [["ภาพรวม", "overview"], [`อ่านราย${config.articleNoun}`, "articles"], ["เล่าทั้งฉบับ", "whole-story"], ["ข้อสอบทบทวน", "quiz"]] as const;
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   const isLiability = config.scene === "liability";
+  const isSecrecy = config.scene === "secrecy";
 
   return <div style={style} className="law-generic min-h-screen overflow-x-hidden bg-[#FFFDF8] text-[#34322D]">
     <header className="sticky top-0 z-50 border-b border-[#173C3A]/10 bg-[#FFFDF8]/92 backdrop-blur-xl">
@@ -81,7 +82,7 @@ export function GenericLawPage({ config }: { config: GenericLawConfig }) {
         <div className="absolute -left-20 top-12 h-52 w-52 rounded-full bg-white/45 blur-3xl" /><div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-white/35 blur-3xl" />
         <div className="mx-auto grid max-w-[1440px] items-center gap-7 px-5 lg:grid-cols-[.92fr_1.08fr] lg:px-10">
           <div className="relative z-10 pb-4 lg:py-10"><div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0E8F8A]/20 bg-[#FFFDF8]/80 px-4 py-2 text-sm font-semibold text-[#0E766F] shadow-sm"><Sparkles size={16} /> อ่านกฎหมายแบบเห็นภาพ</div><p className="mb-3 text-sm font-semibold tracking-[.12em] text-[#9B672C]">{config.legalTitle}</p><h1 className="max-w-2xl text-[58px] font-semibold leading-[1.5] text-[#33482D]">{config.heroTitle}</h1><p className="mt-5 max-w-xl text-lg leading-8 text-[#5D6255]">{config.heroSubtitle}</p><div className="hero-callout mt-5 max-w-lg rounded-2xl bg-[#FFFDF8] px-4 py-3 shadow-sm"><p className="text-sm font-semibold text-[#0E766F]">พี่ราชชวนอ่าน</p><p className="mt-1 text-xs leading-5 text-[#5F5A52]">{config.heroCallout}</p></div><div className="mt-8 flex flex-wrap gap-3"><Button onClick={() => scrollTo("articles")} size="lg" className="rounded-full bg-[#0E8F8A] px-6 text-base font-semibold text-white hover:bg-[#08716C]">เริ่มอ่านทีละ{config.articleNoun} <ChevronRight size={18} /></Button><Button onClick={() => scrollTo("overview")} size="lg" variant="outline" className="rounded-full border-[#0E8F8A]/25 bg-[#FFFDF8]/70 px-6 text-base text-[#0E766F] hover:bg-white">ดูภาพรวมก่อน</Button></div><div className="mt-10 flex flex-wrap gap-6 border-t border-[#0E8F8A]/15 pt-5 text-sm text-[#5D6B67]"><span><strong className="mr-1 text-xl text-[#0E766F]">{config.articles.length}</strong> {config.articleNoun}ในตัวบท</span><span><strong className="mr-1 text-xl text-[#0E766F]">20</strong> ข้อสอบพร้อมเฉลย</span></div></div>
-          <div className={`generic-scene generic-scene-${config.scene} relative min-h-[315px] overflow-hidden rounded-[58%_42%_45%_55%/42%_58%_42%_58%] border-[10px] border-[#FFFDF8]/80 shadow-[0_30px_60px_rgba(66,94,52,.14)] lg:min-h-[510px]`}><span className="scene-prop scene-prop-one">{isLiability ? <Scale /> : <FileText />}</span><span className="scene-prop scene-prop-two">{isLiability ? <ShieldCheck /> : <BookOpen />}</span><span className="scene-prop scene-prop-three">{isLiability ? <FileText /> : <Search />}</span><span className="scene-route scene-route-one" /><span className="scene-route scene-route-two" /><img src={rachaApproveUrl} alt={`พี่ราชประกอบบทเรียน${config.headerLabel}`} className="hero-racha-guide absolute bottom-0 right-[8%] z-10 h-[92%] w-[60%] object-contain object-bottom" /></div>
+          <div className={`generic-scene generic-scene-${config.scene} relative min-h-[315px] overflow-hidden rounded-[58%_42%_45%_55%/42%_58%_42%_58%] border-[10px] border-[#FFFDF8]/80 shadow-[0_30px_60px_rgba(66,94,52,.14)] lg:min-h-[510px]`}><span className="scene-prop scene-prop-one">{isLiability ? <Scale /> : isSecrecy ? <LockKeyhole /> : <FileText />}</span><span className="scene-prop scene-prop-two">{isLiability ? <ShieldCheck /> : isSecrecy ? <KeyRound /> : <BookOpen />}</span><span className="scene-prop scene-prop-three">{isLiability ? <FileText /> : isSecrecy ? <Archive /> : <Search />}</span><span className="scene-route scene-route-one" /><span className="scene-route scene-route-two" /><img src={rachaApproveUrl} alt={`พี่ราชประกอบบทเรียน${config.headerLabel}`} className="hero-racha-guide absolute bottom-0 right-[8%] z-10 h-[92%] w-[60%] object-contain object-bottom" /></div>
         </div>
       </section>
       <section id="overview" className="scroll-mt-24 bg-[#FFFDF8] px-5 py-20 lg:px-10"><div className="mx-auto max-w-[1180px]"><div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-end"><div><p className="section-kicker">เริ่มจากแผนที่เรื่อง</p><h2 className="mt-3 text-4xl font-semibold leading-tight text-[#3A4D31]">{config.overviewTitle}</h2></div><p className="max-w-xl text-lg leading-8 text-[#65615A]">{config.overviewSummary}</p></div><div className="mt-12 grid gap-4 md:grid-cols-3">{config.overview.map(([id, title, detail]) => <article key={id} className="relative min-h-[215px] border border-[var(--law-primary)]/10 bg-white p-6 shadow-[0_12px_30px_rgba(58,76,49,.06)]"><span className="font-mono text-xs font-bold tracking-[.18em] text-[#B77A37]">{id}</span><h3 className="mt-7 text-xl font-semibold text-[var(--law-primary-dark)]">{title}</h3><p className="mt-3 text-sm leading-6 text-[#65615A]">{detail}</p></article>)}</div></div></section>

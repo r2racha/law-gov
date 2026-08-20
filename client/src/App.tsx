@@ -1,3 +1,4 @@
+/** Design reminder — รักษาเส้นทางกฎหมายทุกฉบับให้เข้าถึงได้จากแท็บร่วมและมีหน้าเฉพาะของตน */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -8,6 +9,7 @@ import Home from "./pages/Home";
 import GoodGovernance from "./pages/GoodGovernance";
 import Liability from "./pages/Liability";
 import OfficialInformation from "./pages/OfficialInformation";
+import Secrecy from "./pages/Secrecy";
 
 
 function Router() {
@@ -17,6 +19,7 @@ function Router() {
       <Route path={"/good-governance"} component={GoodGovernance} />
       <Route path={"/liability"} component={Liability} />
       <Route path={"/official-information"} component={OfficialInformation} />
+      <Route path={"/secrecy"} component={Secrecy} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

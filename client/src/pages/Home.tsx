@@ -111,7 +111,7 @@ export default function Home() {
           <div className="flex flex-col gap-2">{navItems.map(([label, id]) => <button key={id} onClick={() => { scrollTo(id); setMobileMenuOpen(false); }} className="rounded-xl px-4 py-3 text-left font-medium hover:bg-[#E7F2EF]">{label}</button>)}</div>
         </div>}
       </header>
-      <div className="law-tabs"><div className="mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 lg:px-10"><Link href="/"><span className="law-tab-active">วิธีปฏิบัติราชการทางปกครอง</span></Link><Link href="/good-governance"><span>บริหารกิจการบ้านเมืองที่ดี</span></Link><Link href="/liability"><span>ความรับผิดทางละเมิด</span></Link><Link href="/official-information"><span>ข้อมูลข่าวสารของราชการ</span></Link></div></div>
+      <div className="law-tabs"><div className="mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 lg:px-10"><Link href="/"><span className="law-tab-active">วิธีปฏิบัติราชการทางปกครอง</span></Link><Link href="/good-governance"><span>บริหารกิจการบ้านเมืองที่ดี</span></Link><Link href="/liability"><span>ความรับผิดทางละเมิด</span></Link><Link href="/official-information"><span>ข้อมูลข่าวสารของราชการ</span></Link><Link href="/secrecy"><span>การรักษาความลับของทางราชการ</span></Link></div></div>
 
       <main id="top">
         <WholeLawStory story={adminProcedureWholeStory} beforeId="quiz" />
