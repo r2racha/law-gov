@@ -14,6 +14,7 @@ const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/3
 const rachaApproveUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ueeHTHMpEJbnxxFV.png";
 const rachaGuideUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/bFRdTUlWHQHNLYsA.png";
 const rachaCelebrateUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/mQgfAwzMyvYmEBBQ.png";
+const administrativeProcedureHeroUrl = "/manus-storage/administrative-procedure-hero_7272d160.png";
 
 const sectionColors: Record<string, string> = {
   "บททั่วไป": "bg-[#FDE6CB] text-[#8A4F18]",
@@ -128,7 +129,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-stage relative min-h-[315px] overflow-hidden rounded-[38%_62%_44%_56%/45%_38%_62%_55%] border-[10px] border-[#FFFDF8]/80 bg-[#D7ECE6] shadow-[0_30px_60px_rgba(26,75,71,.14)] lg:min-h-[510px]">
-              <span className="hero-paper hero-paper-one" /><span className="hero-paper hero-paper-two" /><span className="hero-star">✦</span><img src={rachaGuideUrl} alt="พี่ราชพาเดินผ่านเส้นทางการเรียนรู้กฎหมาย" className="absolute bottom-0 right-[5%] z-10 h-[93%] w-[82%] object-contain object-bottom" />
+              <img src={administrativeProcedureHeroUrl} alt="ภาพประกอบเจ้าหน้าที่รับฟังและพิจารณาเอกสารตามกระบวนการทางปกครองอย่างเป็นธรรม" className="absolute inset-0 h-full w-full object-cover" loading="eager" fetchPriority="high" />
             </div>
           </div>
           <div className="relative z-10 mx-auto mt-4 max-w-[1440px] px-5 lg:px-10"><div className="h-8 bg-[#FFFDF8] [clip-path:polygon(0_55%,5%_0,10%_55%,15%_0,20%_55%,25%_0,30%_55%,35%_0,40%_55%,45%_0,50%_55%,55%_0,60%_55%,65%_0,70%_55%,75%_0,80%_55%,85%_0,90%_55%,95%_0,100%_55%,100%_100%,0_100%)]" /></div>
