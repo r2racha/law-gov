@@ -124,6 +124,7 @@ export default function Home() {
               <p className="mb-3 text-sm font-semibold tracking-[.12em] text-[#B56222]">พ.ร.บ. วิธีปฏิบัติราชการทางปกครอง พ.ศ. 2539</p>
               <h1 className="max-w-2xl text-[42px] font-semibold leading-[1.15] text-[#183D3A] sm:text-6xl">ตัวบทจริง<br /><span className="text-[#0E8F8A]">เล่าให้เข้าใจ</span> ทีละมาตรา</h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#595750]">จากเอกสารกฎหมายสู่เส้นทางเรียนรู้ที่ง่ายขึ้น</p>
+              <div className="hero-callout mt-5 max-w-lg rounded-2xl bg-[#FFFDF8] px-4 py-3 shadow-sm"><p className="text-sm font-semibold text-[#0E625E]">พี่ราชชวนอ่าน</p><p className="mt-1 text-xs leading-5 text-[#5F5A52]">เปิดคำอธิบายก่อน แล้วกดดูตัวบทมาตราจริงได้ทุกมาตรา</p></div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button onClick={() => scrollTo("articles")} size="lg" className="rounded-full bg-[#0E8F8A] px-6 text-base font-semibold text-white shadow-[0_12px_24px_rgba(14,143,138,.2)] hover:bg-[#08716C]">เริ่มอ่านทีละมาตรา <ChevronRight size={18} /></Button>
                 <Button onClick={() => scrollTo("overview")} size="lg" variant="outline" className="rounded-full border-[#0E8F8A]/25 bg-[#FFFDF8]/70 px-6 text-base text-[#0E625E] hover:bg-white">ดูภาพรวมก่อน</Button>
@@ -135,7 +136,6 @@ export default function Home() {
             </div>
             <div className="hero-stage relative min-h-[315px] overflow-hidden rounded-[38%_62%_44%_56%/45%_38%_62%_55%] border-[10px] border-[#FFFDF8]/80 bg-[#D7ECE6] shadow-[0_30px_60px_rgba(26,75,71,.14)] lg:min-h-[510px]">
               <span className="hero-paper hero-paper-one" /><span className="hero-paper hero-paper-two" /><span className="hero-star">✦</span><img src={rachaGuideUrl} alt="พี่ราชพาเดินผ่านเส้นทางการเรียนรู้กฎหมาย" className="absolute bottom-0 right-[5%] z-10 h-[93%] w-[82%] object-contain object-bottom" />
-              <div className="absolute bottom-6 left-6 max-w-[215px] rounded-2xl bg-[#FFFDF8]/92 px-4 py-3 shadow-lg backdrop-blur"><p className="text-sm font-semibold text-[#0E625E]">พี่ราชชวนอ่าน</p><p className="mt-1 text-xs leading-5 text-[#5F5A52]">เปิดคำแปลก่อน แล้วกดดูตัวบทจริงได้ทุกมาตรา</p></div>
             </div>
           </div>
           <div className="relative z-10 mx-auto mt-4 max-w-[1440px] px-5 lg:px-10"><div className="h-8 bg-[#FFFDF8] [clip-path:polygon(0_55%,5%_0,10%_55%,15%_0,20%_55%,25%_0,30%_55%,35%_0,40%_55%,45%_0,50%_55%,55%_0,60%_55%,65%_0,70%_55%,75%_0,80%_55%,85%_0,90%_55%,95%_0,100%_55%,100%_100%,0_100%)]" /></div>
