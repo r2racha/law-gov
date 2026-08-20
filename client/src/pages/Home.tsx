@@ -81,7 +81,7 @@ export default function Home() {
   const navItems = [
     ["ภาพรวม", "overview"],
     ["อ่านรายมาตรา", "articles"],
-    ["สนามสอบ", "quiz"],
+    ["ข้อสอบทบทวน", "quiz"],
   ] as const;
 
   return (
