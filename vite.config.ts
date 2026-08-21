@@ -206,7 +206,8 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
-  base: "./",
+  // GitHub Pages serves this project from a repository subpath rather than the domain root.
+  base: "/law-gov/",
   plugins,
   resolve: {
     alias: {
