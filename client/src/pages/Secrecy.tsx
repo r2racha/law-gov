@@ -1,6 +1,7 @@
 /** Design reminder — ห้องเรียนพาสเทลแบบเล่าเรื่อง: หน้านี้คงจังหวะบทเรียนหน้าแรก แต่ใช้ฉากตู้เอกสารลับและกุญแจแทนแฟ้มกฎหมายเดิม */
 import { GenericLawPage, type GenericLawConfig } from "@/components/GenericLawPage";
-import { secrecyArticles, secrecyQuiz } from "@/data/secrecy";
+import { secrecyArticles } from "@/data/secrecy";
+import { secrecyExam } from "@/data/standardized-quizzes";
 import { secrecyWholeStory } from "@/data/whole-stories";
 
 const config: GenericLawConfig = {
@@ -13,7 +14,7 @@ const config: GenericLawConfig = {
   heroCallout: "เริ่มจากข้อ 12 ถึงข้อ 15 เพื่อแยกชั้นลับที่สุด ลับมาก และลับ แล้วค่อยดูว่าใครเข้าถึงและต้องทำอย่างไร",
   articleNoun: "ข้อ",
   articles: secrecyArticles,
-  quiz: secrecyQuiz,
+  quiz: secrecyExam,
   story: secrecyWholeStory,
   overview: [["01", "ใครดูแล และใครเข้าถึง", "ข้อ 5 ถึงข้อ 11 กำหนดผู้รับผิดชอบ ผู้ได้รับความไว้วางใจ และองค์การรักษาความปลอดภัย"], ["02", "ชั้นความลับกำหนดอย่างไร", "ข้อ 12 ถึงข้อ 24 กำหนดสามชั้น เหตุผล องค์ประกอบ เครื่องหมาย และการปรับชั้น"], ["03", "เอกสารลับเดินทางและตรวจสอบอย่างไร", "ข้อ 25 ถึงข้อ 53 กำหนดทะเบียน ตรวจสอบ การส่ง เก็บ ยืม ทำลาย เหตุฉุกเฉิน และรายงานประจำปี"]],
   overviewTitle: <>กฎหมายฉบับนี้<br />คุ้มครองความลับอย่างไร</>,

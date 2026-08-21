@@ -13,6 +13,7 @@ import { lawArticles, overviewSteps, quizQuestions } from "@/data/law";
 import { WholeLawStory } from "@/components/WholeLawStory";
 import { LawCompletion } from "@/components/LawCompletion";
 import { BackToTop } from "@/components/BackToTop";
+import { FooterContact } from "@/components/FooterContact";
 import { adminProcedureWholeStory } from "@/data/whole-stories";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
@@ -212,6 +213,7 @@ export default function Home() {
 
         <section className="bg-[#174945] px-5 py-16 text-white lg:px-10"><div className="mx-auto grid max-w-[1180px] gap-8 md:grid-cols-[auto_1fr_auto] md:items-center"><img src={rachaApproveUrl} alt="พี่ราช" className="mx-auto h-32 w-auto object-contain md:h-40" /><div><p className="text-sm font-semibold tracking-[.12em] text-[#9FD8D1]">ก่อนปิดหนังสือ</p><h2 className="mt-2 text-3xl font-semibold leading-tight">กฎหมายถึงจะใช้ภาษาที่ยาก<br />แต่การเริ่มเข้าใจไม่จำเป็นต้องยาก</h2><p className="mt-3 max-w-xl text-sm leading-6 text-[#D7EFEB]">เว็บไซต์นี้เรียบเรียงจากกฎหมายฉบับเต็มเพื่อการเรียนรู้เข้าใจง่าย สไลต์พี่ราช</p></div><Button onClick={() => scrollTo("top")} variant="outline" className="rounded-full border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white">กลับไปเริ่มต้น</Button></div></section>
       </main>
+      <FooterContact />
       <footer className="bg-[#123B38] px-5 py-6 text-center leading-6 text-[#D7EFEB]"><strong className="block text-base font-semibold">ทางมุ่งสู่ราชการ</strong><span className="text-xs tracking-[.14em] text-[#9FD8D1]">Road to Kharachakar</span></footer>
     </div>
   );

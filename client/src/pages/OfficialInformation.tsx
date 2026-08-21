@@ -1,6 +1,7 @@
 /** Design reminder — UX/UI เดิมในธีมแฟ้มข้อมูลสีน้ำเงิน ใช้เฉพาะอวตารพี่ราชที่ผู้ใช้อัปโหลด */
 import { GenericLawPage, type GenericLawConfig } from "@/components/GenericLawPage";
-import { officialInformationLearningArticles, officialInformationStandardQuiz } from "@/data/official-information";
+import { officialInformationLearningArticles } from "@/data/official-information";
+import { officialInformationExam } from "@/data/standardized-quizzes";
 import { officialInformationWholeStory } from "@/data/whole-stories";
 
 const config: GenericLawConfig = {
@@ -13,7 +14,7 @@ const config: GenericLawConfig = {
   heroCallout: "เริ่มจากหมวด 1 เพื่อดูข้อมูลที่ต้องเผยแพร่และวิธีขอข้อมูล แล้วค่อยดูข้อยกเว้นและการอุทธรณ์",
   articleNoun: "มาตรา",
   articles: officialInformationLearningArticles,
-  quiz: officialInformationStandardQuiz,
+  quiz: officialInformationExam,
   story: officialInformationWholeStory,
   overview: [["01", "เปิดเผยและจัดข้อมูล", "มาตรา 7 ถึงมาตรา 13 กำหนดข้อมูลที่ต้องลงพิมพ์ จัดไว้ให้ตรวจดู และการขอข้อมูล"], ["02", "ข้อยกเว้นและข้อมูลส่วนบุคคล", "มาตรา 14 ถึงมาตรา 25 กำหนดข้อมูลที่ห้ามหรืออาจไม่เปิดเผย และสิทธิข้อมูลส่วนบุคคล"], ["03", "คณะกรรมการและอุทธรณ์", "มาตรา 27 ถึงมาตรา 41 กำหนดคณะกรรมการ การวินิจฉัยอุทธรณ์ และบทกำหนดโทษ"]],
   overviewTitle: <>กฎหมายฉบับนี้<br />เปิดข้อมูล และคุ้มครองอะไร</>,
