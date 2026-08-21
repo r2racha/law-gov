@@ -12,6 +12,7 @@ import { Link } from "wouter";
 import { lawArticles, overviewSteps, quizQuestions } from "@/data/law";
 import { WholeLawStory } from "@/components/WholeLawStory";
 import { LawCompletion } from "@/components/LawCompletion";
+import { BackToTop } from "@/components/BackToTop";
 import { adminProcedureWholeStory } from "@/data/whole-stories";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
@@ -113,6 +114,7 @@ export default function Home() {
       </header>
       <div className="law-tabs"><div className="mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 lg:px-10"><Link href="/"><span className="law-tab-active">วิธีปฏิบัติราชการทางปกครอง</span></Link><Link href="/good-governance"><span>บริหารกิจการบ้านเมืองที่ดี</span></Link><Link href="/liability"><span>ความรับผิดทางละเมิด</span></Link><Link href="/official-information"><span>ข้อมูลข่าวสารของราชการ</span></Link><Link href="/secrecy"><span>การรักษาความลับของทางราชการ</span></Link></div></div>
 
+      <BackToTop />
       <main id="top">
         <WholeLawStory story={adminProcedureWholeStory} beforeId="quiz" />
         <LawCompletion beforeId="quiz" afterStoryId={adminProcedureWholeStory.id} articleNoun="มาตรา" />
