@@ -3,6 +3,14 @@ import type { QuizQuestion } from "@/data/law";
 import { officialInformationStandardQuiz } from "@/data/official-information";
 import { secrecyQuiz } from "@/data/secrecy";
 
+const examBlueprint = { error: 5, accuracy: 5, analysis: 5, scenario: 5 } as const;
+
+function assertExamBlueprint(label: string, questions: QuizQuestion[]) {
+  const counts = questions.reduce<Record<QuizQuestion["category"], number>>((summary, question) => ({ ...summary, [question.category]: summary[question.category] + 1 }), { error: 0, accuracy: 0, analysis: 0, scenario: 0 });
+  const valid = questions.length === 20 && Object.entries(examBlueprint).every(([category, expected]) => counts[category as QuizQuestion["category"]] === expected);
+  if (!valid) throw new Error(`${label} ต้องมี Error test 5 ข้อ ความแม่นยำทางกฎหมาย 5 ข้อ วิเคราะห์ 5 ข้อ และสถานการณ์ 5 ข้อ`);
+}
+
 function withoutProvisionRefs(text: string) {
   return text
     .replace(/มาตรา\s*\d+(?:\/\d+)?(?:\s*(?:และ|ถึง|–|-)\s*มาตรา?\s*\d+(?:\/\d+)?)?/g, "หลักกฎหมาย")
@@ -172,3 +180,8 @@ export const officialInformationExam = narrativeQuiz(officialInformationStandard
   ],
 } : item);
 export const secrecyExam = narrativeQuiz(secrecyQuiz, secrecyPrompts, secrecyExplanations);
+
+assertExamBlueprint("ข้อสอบบริหารกิจการบ้านเมืองที่ดี", goodGovernanceExam);
+assertExamBlueprint("ข้อสอบความรับผิดทางละเมิด", liabilityExam);
+assertExamBlueprint("ข้อสอบข้อมูลข่าวสารของราชการ", officialInformationExam);
+assertExamBlueprint("ข้อสอบการรักษาความลับของทางราชการ", secrecyExam);
