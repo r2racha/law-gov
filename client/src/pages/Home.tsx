@@ -181,10 +181,10 @@ export default function Home() {
                 <label className="flex items-center gap-3 border border-[#0E8F8A]/15 bg-white px-4 py-3 shadow-sm focus-within:ring-2 focus-within:ring-[#0E8F8A]/30"><Search size={19} className="text-[#0E8F8A]" /><input value={query} onChange={(event) => setQuery(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#A39F95]" placeholder="ค้นหามาตรา คำสำคัญ หรือคำอธิบาย…" /></label>
                 <p className="mt-4 text-sm text-[#66736F]">พบ <strong className="text-[#0E766F]">{filteredArticles.length}</strong> มาตรา</p>
                 <div className="mt-6 space-y-12">
-                  {groupedArticles.map((group, chapterIndex) => {
+                  {groupedArticles.map((group) => {
                     const meta = chapterMeta[group.section] ?? { title: group.section, scene: "บทเรียน", narrator: "อ่านคำแปลควบคู่ตัวบทจริงเพื่อจับสาระสำคัญ", tone: "chapter-stone" };
                     return <section key={group.section} id={sectionAnchor(group.section)} className="relative scroll-mt-36 lg:scroll-mt-28">
-                      <div className={`chapter-spread ${meta.tone}`}><div className="relative z-10 max-w-xl"><p className="chapter-scene">บทที่ {String(chapterIndex + 1).padStart(2, "0")} · {meta.scene}</p><h3>{meta.title}</h3><p className="chapter-narrator"><span>พี่ราชบอก</span>{meta.narrator}</p></div><img src={rachaApproveUrl} alt={`พี่ราชแนะนำ ${meta.title}`} className="chapter-mascot" /><span className="chapter-count">{group.articles.length}<small>มาตรา</small></span></div>
+                      <div className={`chapter-spread ${meta.tone}`}><div className="relative z-10 max-w-xl"><p className="chapter-scene">{meta.scene}</p><h3>{meta.title}</h3><p className="chapter-narrator"><span>พี่ราชบอก</span>{meta.narrator}</p></div><img src={rachaApproveUrl} alt={`พี่ราชแนะนำ ${meta.title}`} className="chapter-mascot" /><span className="chapter-count">{group.articles.length}<small>มาตรา</small></span></div>
                       <Accordion type="multiple" className="article-route mt-5 space-y-3">
                         {group.articles.map((article, articleIndex) => {
                           const repealed = article.lawText.includes("(ยกเลิก)");
