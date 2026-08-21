@@ -97,7 +97,7 @@ export default function Home() {
           <button onClick={() => scrollTo("top")} className="flex items-center gap-3 text-left" aria-label="กลับไปด้านบน">
             <img src={logoUrl} alt="สัญลักษณ์กฎหมายฉบับเล่าเรื่อง" className="h-14 w-14 object-contain drop-shadow-sm" />
             <span className="leading-tight">
-              <strong className="block text-[19px] font-semibold text-[#0E625E]">กฎหมายฉบับเล่าเรื่อง</strong>
+              <strong className="block text-[19px] font-semibold text-[#0E625E]">กฎหมายราชการ</strong>
               <span className="hidden text-xs text-[#6C6A63] sm:block">วิธีปฏิบัติราชการทางปกครอง</span>
             </span>
           </button>
