@@ -34,7 +34,7 @@ export function WholeLawStory({ story, beforeId }: Props) {
     <section id={story.id} className="scroll-mt-24 bg-[#FFFDF8] px-5 py-20 lg:px-10">
       <article className={`mx-auto max-w-[1040px] border ${colors.border} ${colors.bg} px-6 py-9 shadow-[0_18px_38px_rgba(35,77,70,.08)] sm:px-10 sm:py-12`}>
         <p className={`section-kicker ${colors.kicker}`}>{story.eyebrow}</p>
-        <h2 className={`mt-3 max-w-4xl text-4xl font-semibold leading-tight ${colors.heading}`}>{story.title}</h2>
+        <h2 className={`mt-3 max-w-4xl text-[clamp(1.4rem,6.4vw,2.25rem)] font-semibold leading-[1.36] tracking-[-0.018em] sm:text-4xl sm:leading-tight ${colors.heading}`}>{story.title}</h2>
         <div className={`mt-8 space-y-6 border-t-4 ${colors.rule} pt-8 text-[16px] leading-9 ${colors.body}`}>
           {story.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
