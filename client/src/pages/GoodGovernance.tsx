@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { BookOpen, ChevronRight, CircleHelp, Clock3, FileText, Lightbulb, Menu, Scale, Search, Sparkles, X } from "lucide-react";
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
 import { goodGovernanceArticles } from "@/data/good-governance";
 import { goodGovernanceExam } from "@/data/standardized-quizzes";
@@ -60,6 +60,23 @@ export default function GoodGovernance() {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [menu, setMenu] = useState(false);
   const sections = useMemo(() => Array.from(new Set(goodGovernanceArticles.map((article) => article.section))), []);
+  useEffect(() => {
+    const chapterNav = document.querySelector("#articles aside");
+    const onSectionClick = (event: Event) => {
+      const button = (event.target as HTMLElement).closest("button");
+      const selected = button?.textContent?.trim();
+      if (!selected || !["ทั้งหมด", ...sections].includes(selected)) return;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        if (selected === "ทั้งหมด") return scrollTo("articles");
+        const meta = chapterMeta[selected];
+        if (!meta) return;
+        const target = Array.from(document.querySelectorAll<HTMLElement>("#articles section")).find((item) => item.querySelector("h3")?.textContent?.trim() === meta.title);
+        target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }));
+    };
+    chapterNav?.addEventListener("click", onSectionClick);
+    return () => chapterNav?.removeEventListener("click", onSectionClick);
+  }, [sections]);
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return goodGovernanceArticles.filter((article) => (activeSection === "ทั้งหมด" || article.section === activeSection) && (!normalized || [article.number, article.lawText, article.plainSummary, article.keyPoint].join(" ").toLowerCase().includes(normalized)));

@@ -13,7 +13,7 @@ import { WholeLawStory } from "@/components/WholeLawStory";
 import type { WholeLawStory as WholeLawStoryData } from "@/data/whole-stories";
 import type { LawArticle, QuizQuestion } from "@/data/law";
 import { Archive, BookOpen, ChevronRight, CircleHelp, FileText, KeyRound, Lightbulb, LockKeyhole, Menu, Scale, Search, ShieldCheck, Sparkles, X } from "lucide-react";
-import { Fragment, useMemo, useState, type CSSProperties } from "react";
+import { Fragment, useEffect, useMemo, useState, type CSSProperties } from "react";
 import { Link } from "wouter";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
@@ -54,6 +54,23 @@ export function GenericLawPage({ config }: { config: GenericLawConfig }) {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [menu, setMenu] = useState(false);
   const sections = useMemo(() => Array.from(new Set(config.articles.map((article) => article.section))), [config.articles]);
+  useEffect(() => {
+    const chapterNav = document.querySelector("#articles aside");
+    const onSectionClick = (event: Event) => {
+      const button = (event.target as HTMLElement).closest("button");
+      const label = button?.textContent?.trim() ?? "";
+      const selected = label === "ทั้งหมด" ? "ทั้งหมด" : sections.find((section) => label.startsWith(`${section} ·`));
+      if (!selected) return;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        if (selected === "ทั้งหมด") return scrollTo("articles");
+        const meta = config.chapterMeta[selected] ?? fallbackMeta;
+        const target = Array.from(document.querySelectorAll<HTMLElement>("#articles section")).find((item) => item.querySelector("h3")?.textContent?.trim() === meta.title);
+        target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }));
+    };
+    chapterNav?.addEventListener("click", onSectionClick);
+    return () => chapterNav?.removeEventListener("click", onSectionClick);
+  }, [config.chapterMeta, sections]);
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return config.articles.filter((article) => (activeSection === "ทั้งหมด" || article.section === activeSection) && (!normalized || [article.number, article.section, article.keyPoint, article.plainSummary, article.lawText].join(" ").toLowerCase().includes(normalized)));
