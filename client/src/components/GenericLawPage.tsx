@@ -9,12 +9,12 @@ import { Progress } from "@/components/ui/progress";
 import { LawCompletion } from "@/components/LawCompletion";
 import { BackToTop } from "@/components/BackToTop";
 import { FooterContact } from "@/components/FooterContact";
+import { LawTabs } from "@/components/LawTabs";
 import { WholeLawStory } from "@/components/WholeLawStory";
 import type { WholeLawStory as WholeLawStoryData } from "@/data/whole-stories";
 import type { LawArticle, QuizQuestion } from "@/data/law";
 import { Archive, BookOpen, ChevronRight, CircleHelp, FileText, KeyRound, Lightbulb, LockKeyhole, Menu, Scale, Search, ShieldCheck, Sparkles, X } from "lucide-react";
 import { Fragment, useEffect, useMemo, useState, type CSSProperties } from "react";
-import { Link } from "wouter";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
 const rachaApproveUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ueeHTHMpEJbnxxFV.png";
@@ -44,7 +44,6 @@ export type GenericLawConfig = {
   scene: "liability" | "information" | "secrecy";
 };
 
-const tabs = [["/", "วิธีปฏิบัติราชการทางปกครอง"], ["/good-governance", "บริหารกิจการบ้านเมืองที่ดี"], ["/liability", "ความรับผิดทางละเมิด"], ["/official-information", "ข้อมูลข่าวสารของราชการ"], ["/secrecy", "การรักษาความลับของทางราชการ"]] as const;
 const fallbackMeta: ChapterMeta = { title: "อ่านกติกาในส่วนนี้ให้เห็นความเชื่อมโยง", scene: "บทเรียน", narrator: "อ่านคำแปลควบคู่ตัวบทจริง เพื่อจับผู้เกี่ยวข้อง เงื่อนไข และผลตามกฎหมายให้ครบ", tone: "chapter-stone", lessonPrompt: "หยุดทวนว่าแต่ละมาตราในส่วนนี้เชื่อมกันเป็นลำดับอย่างไร ก่อนอ่านต่อ" };
 
 export function GenericLawPage({ config }: { config: GenericLawConfig }) {
@@ -93,7 +92,7 @@ export function GenericLawPage({ config }: { config: GenericLawConfig }) {
       </div>
       {menu && <div className="border-t border-[#173C3A]/10 bg-[#FFFDF8] px-5 py-4 md:hidden"><div className="flex flex-col gap-2 text-left">{navItems.map(([label, id]) => <button key={id} onClick={() => { scrollTo(id); setMenu(false); }} className="rounded-xl px-4 py-3 font-medium hover:bg-[var(--law-soft)]">{label}</button>)}</div></div>}
     </header>
-    <div className="law-tabs"><div className="mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 lg:px-10">{tabs.map(([path, label]) => <Link key={path} href={path}><span className={path === `/${config.slug}` ? "law-tab-active" : ""}>{label}</span></Link>)}</div></div>
+    <LawTabs activePath={`/${config.slug}`} />
     <BackToTop />
     <main id="top">
       <WholeLawStory story={config.story} beforeId="quiz" />

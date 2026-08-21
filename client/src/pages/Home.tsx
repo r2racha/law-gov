@@ -8,12 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { BookOpen, ChevronRight, CircleHelp, Clock3, FileText, Lightbulb, Menu, Scale, Search, Sparkles, X } from "lucide-react";
 import { Fragment, useMemo, useState } from "react";
-import { Link } from "wouter";
 import { lawArticles, overviewSteps, quizQuestions } from "@/data/law";
 import { WholeLawStory } from "@/components/WholeLawStory";
 import { LawCompletion } from "@/components/LawCompletion";
 import { BackToTop } from "@/components/BackToTop";
 import { FooterContact } from "@/components/FooterContact";
+import { LawTabs } from "@/components/LawTabs";
 import { adminProcedureWholeStory } from "@/data/whole-stories";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
@@ -119,7 +119,7 @@ export default function Home() {
           <div className="flex flex-col gap-2">{navItems.map(([label, id]) => <button key={id} onClick={() => { scrollTo(id); setMobileMenuOpen(false); }} className="rounded-xl px-4 py-3 text-left font-medium hover:bg-[#E7F2EF]">{label}</button>)}</div>
         </div>}
       </header>
-      <div className="law-tabs"><div className="mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 lg:px-10"><Link href="/"><span className="law-tab-active">วิธีปฏิบัติราชการทางปกครอง</span></Link><Link href="/good-governance"><span>บริหารกิจการบ้านเมืองที่ดี</span></Link><Link href="/liability"><span>ความรับผิดทางละเมิด</span></Link><Link href="/official-information"><span>ข้อมูลข่าวสารของราชการ</span></Link><Link href="/secrecy"><span>การรักษาความลับของทางราชการ</span></Link></div></div>
+      <LawTabs activePath="/" />
 
       <BackToTop />
       <main id="top">
