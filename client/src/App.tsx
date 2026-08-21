@@ -33,7 +33,7 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
-  const routerBase = import.meta.env.PROD ? import.meta.env.BASE_URL.replace(/\/$/, "") : "";
+  const routerBase = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   return (
     <ErrorBoundary>
