@@ -203,7 +203,22 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function vitePluginGithubPagesFallback(): Plugin {
+  return {
+    name: "github-pages-spa-fallback",
+    closeBundle() {
+      const outputDir = path.join(PROJECT_ROOT, "dist", "public");
+      const indexPath = path.join(outputDir, "index.html");
+      const fallbackPath = path.join(outputDir, "404.html");
+
+      if (fs.existsSync(indexPath)) {
+        fs.copyFileSync(indexPath, fallbackPath);
+      }
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginGithubPagesFallback()];
 
 export default defineConfig({
   // GitHub Pages serves this project from a repository subpath rather than the domain root.
