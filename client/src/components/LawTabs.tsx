@@ -1,6 +1,6 @@
 /**
  * Design reminder — ห้องเรียนพาสเทลแบบเล่าเรื่อง:
- * The tab rail uses Civic Teal wayfinding and makes horizontal discovery explicit on phones.
+ * The tab rail uses Civic Teal wayfinding and keeps the swipe hint in its own lane, never over a label.
  */
 import { ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -32,9 +32,9 @@ export function LawTabs({ activePath }: { activePath: string }) {
   }, []);
 
   return <div className="law-tabs">
-    <div ref={railRef} className="law-tabs-viewport mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 lg:px-10" aria-label="เลือกกฎหมาย">
+    <div ref={railRef} className="law-tabs-viewport mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 pt-3 lg:px-10" aria-label="เลือกกฎหมาย">
       {laws.map(([path, label]) => <Link key={path} href={path}><span className={path === activePath ? "law-tab-active" : ""}>{label}</span></Link>)}
     </div>
-    <div className={`law-tabs-scroll-cue ${canScrollRight ? "" : "law-tabs-scroll-cue-hidden"}`} aria-hidden="true"><span>เลื่อนดูต่อ</span><ChevronRight size={18} /></div>
+    <div className={`law-tabs-scroll-cue ${canScrollRight ? "" : "law-tabs-scroll-cue-hidden"}`} aria-hidden="true"><span>ปัดเพื่อดูกฎหมายอื่น</span><ChevronRight size={18} /></div>
   </div>;
 }

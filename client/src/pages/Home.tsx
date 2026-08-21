@@ -132,7 +132,7 @@ export default function Home() {
             <div className="relative z-10 pb-4 lg:py-10">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0E8F8A]/20 bg-[#FFFDF8]/80 px-4 py-2 text-sm font-semibold text-[#0E766F] shadow-sm"><Sparkles size={16} /> อ่านกฎหมายแบบเห็นภาพ</div>
               <p className="mb-3 text-sm font-semibold tracking-[.12em] text-[#B56222]">พ.ร.บ. วิธีปฏิบัติราชการทางปกครอง พ.ศ. 2539</p>
-              <h1 className="max-w-2xl text-[58px] font-semibold leading-[1.5] text-[#183D3A]">ตัวบทจริง<br /><span className="text-[#0E8F8A]">เล่าให้เข้าใจ</span> ทีละมาตรา</h1>
+              <h1 className="hero-main-title max-w-2xl text-[58px] font-semibold leading-[1.5] text-[#183D3A]">ตัวบทจริง<br /><span className="text-[#0E8F8A]">เล่าให้เข้าใจ</span> ทีละมาตรา</h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#595750]">จากเอกสารกฎหมายสู่เส้นทางเรียนรู้ที่ง่ายขึ้น</p>
               <div className="hero-callout mt-5 max-w-lg rounded-2xl bg-[#FFFDF8] px-4 py-3 shadow-sm"><p className="text-sm font-semibold text-[#0E625E]">พี่ราชชวนอ่าน</p><p className="mt-1 text-xs leading-5 text-[#5F5A52]">เปิดคำอธิบายก่อน แล้วกดดูตัวบทมาตราจริงได้ทุกมาตรา</p></div>
               <div className="mt-8 flex flex-wrap gap-3">
