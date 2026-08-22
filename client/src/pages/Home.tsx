@@ -17,9 +17,9 @@ import { LawTabs } from "@/components/LawTabs";
 import { adminProcedureWholeStory } from "@/data/whole-stories";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
-const rachaApproveUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ueeHTHMpEJbnxxFV.png";
-const rachaGuideUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/bFRdTUlWHQHNLYsA.png";
-const rachaCelebrateUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/mQgfAwzMyvYmEBBQ.png";
+const rachaApproveUrl = "/manus-storage/racha-point_d7443c62.png";
+const rachaGuideUrl = "/manus-storage/racha-explain_ba9373e3.png";
+const rachaCelebrateUrl = "/manus-storage/racha-celebrate_ec295ef1.png";
 
 const sectionColors: Record<string, string> = {
   "บททั่วไป": "bg-[#FDE6CB] text-[#8A4F18]",

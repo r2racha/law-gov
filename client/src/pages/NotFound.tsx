@@ -5,7 +5,7 @@ import { BookOpen, Home, SearchX } from "lucide-react";
 import { useLocation } from "wouter";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
-const rachaGuideUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/bFRdTUlWHQHNLYsA.png";
+const rachaGuideUrl = "/manus-storage/racha-greeting_8ae5c2cb.png";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
