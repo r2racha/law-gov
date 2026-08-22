@@ -60,16 +60,16 @@ export function FooterContact() {
           </div>
         </div>
 
-        <aside className="mt-6 flex flex-col items-center gap-4 border-t border-dashed border-[#0E8F8A]/20 pt-6 text-center">
-          <div>
+        <aside className="mt-6 flex flex-col items-center gap-3 border-t border-dashed border-[#0E8F8A]/20 bg-[#FBF8EF] px-5 py-6 text-center">
+          <div className="space-y-1">
             <p className="text-xl font-bold leading-8 text-[#1C4C49]">ข้าราชการสายไหนเหมาะกับคุณ?</p>
-            <p className="mt-1 text-sm font-medium leading-6 text-[#5C6E6A]">อยากรู้!! กดลิงก์นี้เลย →</p>
+            <p className="text-[17.5px] font-semibold leading-7 text-[#0E8F8A]">อยากรู้!!</p>
           </div>
           <a
             href={civilServiceCompassUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-[#E17A38] px-5 py-3 text-sm font-bold text-white shadow-[0_8px_18px_rgba(225,122,56,.2)] transition hover:bg-[#C9682E] active:scale-[0.97]"
+            className="inline-flex min-w-[142px] items-center justify-center gap-2 rounded-full bg-[#E17A38] px-5 py-3 text-sm font-bold text-white shadow-[0_8px_18px_rgba(225,122,56,.2)] transition hover:bg-[#C9682E] active:scale-[0.97]"
           >
             <ExternalLink size={17} /> กดเลย
           </a>
