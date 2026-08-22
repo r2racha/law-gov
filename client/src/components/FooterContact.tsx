@@ -4,7 +4,7 @@ import { Download, ExternalLink, MessageCircle } from "lucide-react";
 // Use Line's public image URL so the QR is available from the independent GitHub Pages domain.
 const lineQrUrl = "https://qr-official.line.me/gs/M_891kiemx_GW.png?oat_content=qr";
 const lineAddUrl = "https://page.line.me/891kiemx";
-const civilServiceCompassUrl = "https://swiy.co/compass/";
+const civilServiceCompassUrl = "https://r2racha.github.io/compass/";
 
 export function FooterContact() {
   return (
@@ -71,7 +71,7 @@ export function FooterContact() {
             rel="noreferrer"
             className="inline-flex w-fit items-center gap-2 rounded-full bg-[#E17A38] px-5 py-3 text-sm font-bold text-white shadow-[0_8px_18px_rgba(225,122,56,.2)] transition hover:bg-[#C9682E] active:scale-[0.97]"
           >
-            <ExternalLink size={17} /> https://swiy.co/compass/
+            <ExternalLink size={17} /> กดเลย
           </a>
         </aside>
       </div>
