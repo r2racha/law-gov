@@ -2,7 +2,7 @@
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 
-const rachaCelebrateUrl = "/manus-storage/racha-celebrate_ec295ef1.png";
+const rachaCelebrateUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/MuWYerhTfkTxCdOV.png";
 
 type Props = { beforeId: string; afterStoryId: string; articleNoun: string };
 

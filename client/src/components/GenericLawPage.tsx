@@ -17,8 +17,8 @@ import { Archive, BookOpen, ChevronRight, CircleHelp, FileText, KeyRound, Lightb
 import { Fragment, useEffect, useMemo, useState, type CSSProperties } from "react";
 
 const logoUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/ijDqypShUTEJNIeY.png";
-const rachaApproveUrl = "/manus-storage/racha-point_d7443c62.png";
-const rachaGuideUrl = "/manus-storage/racha-explain_ba9373e3.png";
+const rachaApproveUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/DGIzWzWVkMogpIuZ.png";
+const rachaGuideUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/QsjUVVBxSAqoeGoo.png";
 
 export type ChapterMeta = { title: string; scene: string; narrator: string; tone: string; lessonPrompt: string };
 export type GenericLawConfig = {
