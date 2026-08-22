@@ -105,6 +105,45 @@
 /* Shared brand signal: route palettes remain in backgrounds, while navigation and lesson markers stay Civic Teal. */
 .law-tabs a { border-color: #CDE3DE; }.law-tabs a:hover { border-color: #0E8F8A; color: #0E766F; }.law-tabs .law-tab-active { background: #0E8F8A; }.article-ribbon, .article-ribbon-good, .generic-ribbon { border: 2px solid #FFFDF8; background: #0E8F8A; box-shadow: 7px 7px 0 #B8DED7, inset 0 -4px 0 rgb(0 68 64 / .22); }.article-interlude-good::before, .generic-interlude::before { background: #0E8F8A; }.article-interlude-good span, .generic-interlude span, .generic-memory strong { color: #0E766F; }
 
+/* Pencil-storybook scenes: non-avatar graphics share the hand-drawn colored-pencil language of P' Racha. */
+.hero-procedure-scene { background: linear-gradient(145deg, #DFF0EB, #A6D8D0 62%, #EFF8F5); }
+.hero-good-governance-scene { background: linear-gradient(142deg, #E8F1DA 0%, #BFD7A3 58%, #ECF4E0 100%); }
+.generic-scene { background: linear-gradient(145deg, #F3E4DF, #E6B4A3 58%, #FBF1EA); }
+.generic-scene-information { background: linear-gradient(145deg, #E4F0F9, #B6D4E9 58%, #F4F9FD); }
+.generic-scene-secrecy { background: linear-gradient(145deg, #E5ECE7 0%, #B8D0C7 57%, #EFF5F1 100%); }
+.hero-procedure-scene::before, .hero-good-governance-scene::before, .generic-scene::before { position: absolute; inset: 0; z-index: 1; background-position: left 4% bottom 3%; background-repeat: no-repeat; background-size: 94% auto; content: ""; -webkit-mask-image: linear-gradient(90deg, #000 0 53%, rgb(0 0 0 / .9) 58%, transparent 67%); mask-image: linear-gradient(90deg, #000 0 53%, rgb(0 0 0 / .9) 58%, transparent 67%); pointer-events: none; }
+.hero-procedure-scene::before { background-image: url("https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/xZBHZPHrmdNqmXvI.png"); }
+.hero-good-governance-scene::before { background-image: url("https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/domXavSBfMxWTNpG.png"); }
+.generic-scene::before { background-image: url("https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/zOYtyIjGzyvfNgWg.png"); }
+.generic-scene-information::before { position: absolute; inset: 0; z-index: 1; background: url("https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/bdcPpgzXiyEvKbpb.png") left 4% bottom 3% / 94% auto no-repeat; content: ""; -webkit-mask-image: linear-gradient(90deg, #000 0 53%, rgb(0 0 0 / .9) 58%, transparent 67%); mask-image: linear-gradient(90deg, #000 0 53%, rgb(0 0 0 / .9) 58%, transparent 67%); pointer-events: none; }
+.generic-scene-secrecy::before { position: absolute; inset: 0; z-index: 1; border: 0; border-radius: 0; background: url("https://files.manuscdn.com/user_upload_by_module/session_file/310519663866287321/papjLGprTRVRZbZl.png") left 4% bottom 3% / 94% auto no-repeat; box-shadow: none; content: ""; transform: none; -webkit-mask-image: linear-gradient(90deg, #000 0 53%, rgb(0 0 0 / .9) 58%, transparent 67%); mask-image: linear-gradient(90deg, #000 0 53%, rgb(0 0 0 / .9) 58%, transparent 67%); pointer-events: none; }
+.hero-procedure-scene .hero-window, .hero-procedure-scene .hero-desk, .hero-procedure-scene .hero-document, .hero-procedure-scene .hero-symbol, .hero-good-governance-scene .good-goal-card, .hero-good-governance-scene .good-route, .generic-scene .scene-prop, .generic-scene .scene-route { display: none; }
+
+/* Secondary process and quiz graphics retain their information architecture with soft pencil-like paper texture. */
+.process-canvas, .quiz-canvas { background-image: repeating-linear-gradient(20deg, rgb(255 253 248 / .11) 0 1px, transparent 1px 7px), linear-gradient(135deg, #EAF5F1, #CDE7E1); }
+.quiz-canvas { background-image: repeating-linear-gradient(20deg, rgb(255 253 248 / .12) 0 1px, transparent 1px 7px), linear-gradient(145deg, #FBDDB5, #F9C580 60%, #F5AE70); }
+.process-card, .quiz-check { border: 2px dashed rgb(86 93 72 / .45); border-radius: 8px; box-shadow: 3px 4px 0 rgb(78 67 48 / .16); filter: saturate(.84); }
+.process-card svg, .quiz-check { filter: drop-shadow(.8px .8px 0 rgb(90 72 50 / .18)); }
+
+/* Editorial learning path: turn the long legal list into a clearly paced lesson journey. */
+.article-route { padding: .2rem .15rem .2rem .45rem; }
+.article-route::before { left: 49px; width: 4px; border-left: 0; background: repeating-linear-gradient(to bottom, rgb(14 143 138 / .48) 0 10px, transparent 10px 17px); box-shadow: 1px 0 0 rgb(74 68 50 / .12); }
+.lesson-card { border-radius: 1.05rem 1.45rem 1rem 1.3rem; box-shadow: 0 7px 0 rgb(38 75 70 / .05), 0 14px 25px rgb(38 75 70 / .04); }
+.lesson-card::after { width: 4px; background: repeating-linear-gradient(to bottom, #0E8F8A 0 12px, #A8D8D1 12px 19px); opacity: .58; }
+.article-ribbon, .article-ribbon-good, .generic-ribbon { overflow: visible; border: 2px solid #40544C; border-radius: .42rem .42rem .3rem .3rem; clip-path: polygon(0 4%, 8% 0, 92% 0, 100% 4%, 100% 77%, 83% 72%, 50% 100%, 17% 72%, 0 77%); box-shadow: 5px 6px 0 #B8DED7, inset 0 -4px 0 rgb(0 68 64 / .22); filter: drop-shadow(1px 1px 0 rgb(77 62 43 / .16)); }
+.article-ribbon::before { width: 8px; background: rgb(255 253 248 / .24); }
+.article-ribbon::after { position: absolute; right: -3px; top: 15%; height: 53%; width: 9px; border-right: 2px solid rgb(64 84 76 / .45); border-bottom: 2px solid rgb(64 84 76 / .42); background: rgb(0 68 64 / .2); content: ""; transform: skewY(-23deg); }
+.chapter-spread h3, .generic-chapter-spread h3 { font-size: clamp(1.95rem, 3.45vw, 2.85rem); letter-spacing: -.025em; text-shadow: 1px 1px 0 rgb(255 253 248 / .82); }
+.chapter-narrator { border-left: 3px solid #E17A38; background: rgb(255 253 248 / .48); padding: .5rem .75rem; box-shadow: 3px 3px 0 rgb(177 98 34 / .08); }
+.chapter-narrator span { color: #0E766F; }
+.postit-note, .postit-note-good, .generic-postit, .memory-cue, .generic-memory { border-radius: .2rem .55rem .35rem .6rem; }
+.postit-note::after, .generic-postit::after { position: absolute; right: .8rem; top: .65rem; color: rgb(98 83 58 / .26); content: "✦"; font-size: 1.25rem; }
+.memory-cue strong, .generic-memory strong { letter-spacing: .08em; }
+header.sticky > div > button:first-child img { height: 3.65rem; width: 3.65rem; filter: drop-shadow(1px 2px 0 rgb(64 84 76 / .18)); transform: rotate(-2deg); }
+header.sticky > div > button:first-child strong { letter-spacing: -.03em; text-shadow: 1px 1px 0 rgb(255 253 248 / .85); }
+
+@media (max-width: 640px) { .article-route { padding-left: .15rem; }.article-route::before { left: 33px; }.article-ribbon::after { display: none; }.chapter-spread h3, .generic-chapter-spread h3 { font-size: clamp(1.75rem, 8.4vw, 2.25rem); }.chapter-narrator { margin-right: 2.5rem; }.lesson-card { border-radius: .8rem 1.1rem .75rem 1rem; } }
+
 @media (prefers-reduced-motion: no-preference) { #overview article, #articles [data-slot="accordion-item"], #quiz article { animation: soft-rise .42s cubic-bezier(.23, 1, .32, 1) both; } #overview article:nth-child(2), #articles [data-slot="accordion-item"]:nth-child(2), #quiz article:nth-child(2n) { animation-delay: .05s; } #overview article:nth-child(3) { animation-delay: .1s; } }
 @keyframes soft-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
